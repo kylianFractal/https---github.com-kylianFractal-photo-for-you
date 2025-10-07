@@ -1,0 +1,46 @@
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+}
+
+.hero h2 {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.hero img {
+  width: 70%;
+  max-width: 800px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.categories {
+  background: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 50px 0;
+}
+
+.cat {
+  text-align: center;
+}
+
+.cat img {
+  width: 220px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.cat img:hover {
+  transform: scale(1.05);
+}
