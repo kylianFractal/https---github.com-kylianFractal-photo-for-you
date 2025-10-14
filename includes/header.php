@@ -47,8 +47,8 @@
           <span class="navbar-text text-white me-3">Bonjour, <?= htmlspecialchars($_SESSION['user']['prenom']) ?></span>
           <a href="logout.php" class="btn btn-outline-danger">Déconnexion</a>
         <?php else: ?>
-          <a href="photo_for_you/pages/inscription.php" class="btn btn-outline-light me-2">S’inscrire</a>
-          <a href="login.php" class="btn btn-warning">S’identifier</a>
+          <a href="pages/inscription.php" class="btn btn-outline-light me-2">S’inscrire</a>
+          <a href="pages/logIN.php" class="btn btn-warning">S’identifier</a>
         <?php endif; ?>
       </div>
     </div>
