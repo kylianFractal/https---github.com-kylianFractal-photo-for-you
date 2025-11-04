@@ -18,7 +18,7 @@ $userPrenom = $_SESSION['user']['prenom'] ?? null;
     <meta charset="UTF-8">
     <title>PhotoForYou</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/tpap/p4u/photo_for_you/assets/css/style.css">
 </head>
 <body>
 <header>
@@ -53,7 +53,7 @@ $userPrenom = $_SESSION['user']['prenom'] ?? null;
 
                 <?php if ($userType): ?>
                     <span class="navbar-text text-white me-3">Bonjour, <?= htmlspecialchars($userPrenom ?? '') ?></span>
-                    <a href="logout.php" class="btn btn-outline-danger">Déconnexion</a>
+                    <a href="/tpap/p4u/photo_for_you/pages/logout.php" class="btn btn-outline-danger">Déconnexion</a>
                 <?php else: ?>
                     <a href="pages/register.php" class="btn btn-outline-light me-2">S’inscrire</a>
                     <a href="pages/login.php" class="btn btn-warning">S’identifier</a>
