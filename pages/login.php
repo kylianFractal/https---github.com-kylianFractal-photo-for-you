@@ -1,9 +1,8 @@
 <?php
-require_once "../src/Database.php";
+require_once "../src/controller.php";
 require_once "../src/User.php";
 require_once "../src/Auth.php";
 
-session_start();
 
 $db = Database::getInstance();
 $auth = new Auth($db);

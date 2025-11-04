@@ -55,8 +55,8 @@ $userPrenom = $_SESSION['user']['prenom'] ?? null;
                     <span class="navbar-text text-white me-3">Bonjour, <?= htmlspecialchars($userPrenom ?? '') ?></span>
                     <a href="logout.php" class="btn btn-outline-danger">Déconnexion</a>
                 <?php else: ?>
-                    <a href="register.php" class="btn btn-outline-light me-2">S’inscrire</a>
-                    <a href="login.php" class="btn btn-warning">S’identifier</a>
+                    <a href="pages/register.php" class="btn btn-outline-light me-2">S’inscrire</a>
+                    <a href="pages/login.php" class="btn btn-warning">S’identifier</a>
                 <?php endif; ?>
             </div>
         </div>
