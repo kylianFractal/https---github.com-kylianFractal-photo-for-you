@@ -24,7 +24,7 @@ $userPrenom = $_SESSION['user']['prenom'] ?? null;
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand fw-bold text-warning" href="#">PhotoForYou</a>
+            <a class="navbar-brand fw-bold text-warning" href="/tpap/p4u/photo_for_you">PhotoForYou</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
                 <span class="navbar-toggler-icon"></span>
@@ -34,11 +34,11 @@ $userPrenom = $_SESSION['user']['prenom'] ?? null;
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <?php if ($userType): ?>
                         <?php if ($userType === 'photographe'): ?>
-                            <li class="nav-item"><a class="nav-link" href="vendre.php">Vendre</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/tpap/p4u/photo_for_you/pages/vendre.php">Vendre</a></li>
                         <?php elseif ($userType === 'client'): ?>
-                            <li class="nav-item"><a class="nav-link" href="acheter.php">Acheter</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/tpap/p4u/photo_for_you/pages/acheter.php">Acheter</a></li>
                         <?php elseif ($userType === 'admin'): ?>
-                            <li class="nav-item"><a class="nav-link" href="admin.php">Admin</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/tpap/p4u/photo_for_you/pages/admin.php">Admin</a></li>
                         <?php endif; ?>
                     <?php else: ?>
                         <li class="nav-item"><a class="nav-link" href="#">Photos</a></li>
