@@ -11,21 +11,21 @@ include "includes/header.php";
         <a href="#" class="btn-primary">Inscrivez-vous !</a>
     </div>
     <div class="hero-image">
-        <img src="assets/img/hero.jpg" alt="Photo mise en avant">
+        <img src="assets\image\1truc" alt="Photo mise en avant">
     </div>
 </section>
 
 <section class="categories">
     <div class="cat">
-        <img src="assets/img/paysages.jpg" alt="Paysages">
+        <img src="assets\image\1truc" alt="Paysages">
         <p>Paysages</p>
     </div>
     <div class="cat">
-        <img src="assets/img/portraits.jpg" alt="Portraits">
+        <img src="assets\image\1truc" alt="Portraits">
         <p>Portraits</p>
     </div>
     <div class="cat">
-        <img src="assets/img/evenement.jpg" alt="Événements">
+        <img src="assets\image\1truc" alt="Événements">
         <p>Événements</p>
     </div>
 </section>
