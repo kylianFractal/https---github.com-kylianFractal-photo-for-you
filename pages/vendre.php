@@ -20,20 +20,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['photo'])) {
     $nomPhoto = $_POST['nom_photos'] ?? 'photo_sans_nom';
     $userId = $_SESSION['user']['userId'] ?? null;
 
+    if ($userId === null) {
+        echo "<div class='alert alert-danger'>Utilisateur non connecté.</div>";
+        exit;
+    }
+
     // Vérification de la résolution minimale
     list($width, $height) = getimagesize($file['tmp_name']);
     if (!Photo::verifierResolution($width, $height)) {
         echo "<div class='alert alert-danger'>Erreur : résolution minimale 2400x1600 pixels.</div>";
     } else {
-        $uploadDir = "../uploads/";
-        $chemin = $uploadDir . basename($file['name']);
-        if (move_uploaded_file($file['tmp_name'], $chemin)) {
+        // Dossier cible (chemin absolu pour move_uploaded_file)
+        $uploadDir = __DIR__ . "/../assets/image/";
+
+        // Crée le dossier s'il n'existe pas
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0777, true);
+        }
+
+        // Chemin relatif (pour la BDD et l'affichage web)
+        $cheminRelatif = "assets/image/" . basename($file['name']);
+        // Chemin absolu (pour déplacer le fichier)
+        $cheminAbsolu = $uploadDir . basename($file['name']);
+
+        if (move_uploaded_file($file['tmp_name'], $cheminAbsolu)) {
             $photoModel->createPhoto([
                 'nom_photos'      => $nomPhoto,
                 'taille_pixels_x' => $width,
                 'taille_pixels_y' => $height,
                 'poids'           => $file['size'],
-                'chemin'          => $chemin,
+                'chemin'          => $cheminRelatif, // chemin relatif stocké en BDD
                 'id_user'         => $userId
             ]);
             echo "<div class='alert alert-success'>Photo ajoutée avec succès !</div>";

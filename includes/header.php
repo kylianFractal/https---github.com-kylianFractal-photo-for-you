@@ -34,15 +34,17 @@ $userPrenom = $_SESSION['user']['prenom'] ?? null;
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <?php if ($userType): ?>
                         <?php if ($userType === 'photographe'): ?>
-                            <li class="nav-item"><a class="nav-link" href="/tpap/p4u/photo_for_you/pages/vendre.php">Vendre</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/tpap/p4u/photo_for_you/pages/vendre.php">Vendez Vos Photos</a></li>
                         <?php elseif ($userType === 'client'): ?>
-                            <li class="nav-item"><a class="nav-link" href="/tpap/p4u/photo_for_you/pages/acheter.php">Acheter</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/tpap/p4u/photo_for_you/pages/acheter.php">catalogue</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/tpap/p4u/photo_for_you/pages/credit.php">crédit</a></li>                            
                         <?php elseif ($userType === 'admin'): ?>
                             <li class="nav-item"><a class="nav-link" href="/tpap/p4u/photo_for_you/pages/admin.php">Admin</a></li>
                         <?php endif; ?>
                     <?php else: ?>
-                        <li class="nav-item"><a class="nav-link" href="#">Photos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Tarifs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Vendez Vos Photos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Catalog Des Photo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Crédit</a></li>
                     <?php endif; ?>
                 </ul>
 
@@ -55,8 +57,8 @@ $userPrenom = $_SESSION['user']['prenom'] ?? null;
                     <span class="navbar-text text-white me-3">Bonjour, <?= htmlspecialchars($userPrenom ?? '') ?></span>
                     <a href="/tpap/p4u/photo_for_you/pages/logout.php" class="btn btn-outline-danger">Déconnexion</a>
                 <?php else: ?>
-                    <a href="pages/register.php" class="btn btn-outline-light me-2">S’inscrire</a>
-                    <a href="pages/login.php" class="btn btn-warning">S’identifier</a>
+                    <a href="/tpap/p4u/photo_for_you/pages/register.php" class="btn btn-outline-light me-2">S’inscrire</a>
+                    <a href="/tpap/p4u/photo_for_you/pages/login.php" class="btn btn-warning">S’identifier</a>
                 <?php endif; ?>
             </div>
         </div>
